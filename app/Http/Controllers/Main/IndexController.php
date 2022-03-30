@@ -10,6 +10,6 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        return 111111;
+        return view('main.index');
     }
 }

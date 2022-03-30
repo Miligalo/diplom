@@ -1,131 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edica :: Home</title>
-    <link rel="stylesheet" href="{{asset('assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendors/font-awesome/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/vendors/aos/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-    <script src="{{asset('assets/vendors/jquery/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/js/loader.js')}}"></script>
-</head>
-<body>
-    <div class="edica-loader"></div>
-    <header class="edica-header">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html"><img src="{{asset('assets/images/logo.svg')}}" alt="Edica"></a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#edicaMainNav" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="edicaMainNav">
-                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('main.index')}}">Блог</a>
-                        </li>
-                        <li class="nav-item">
-                            @auth
-                            <a class="nav-link" href="{{route('personal.main.index')}}">Личный кабинет</a>
-                            @endauth
-                            
-                            @guest
-                            <a class="nav-link" href="{{route('personal.main.index')}}">Войти</a> 
-                            @endguest
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-@yield('content')
+		<title>Electro - HTML Ecommerce Template</title>
 
-    <section class="edica-footer-banner-section">
-        <div class="container">
-            <div class="footer-banner" data-aos="fade-up">
-                <h1 class="banner-title">Download it now.</h1>
-                <div class="banner-btns-wrapper">
-                    <button class="btn btn-success"> <img src="assets/images/apple@1x.svg" alt="ios" class="mr-2"> App Store</button>
-                    <button class="btn btn-success"> <img src="assets/images/android@1x.svg" alt="android" class="mr-2"> Google Play</button>
-                </div>
-                <p class="banner-text">Add some helper text here to explain the finer details of your <br> product or service.</p>
-            </div>
-        </div>
-    </section>
-    <footer class="edica-footer" data-aos="fade-up">
-        <div class="container">
-            <div class="row footer-widget-area">
-                <div class="col-md-3">
-                    <a href="index.html" class="footer-brand-wrapper">
-                        <img src="assets/images/logo.svg" alt="edica logo">
-                    </a>
-                    <p class="contact-details">hello@edica.com</p>
-                    <p class="contact-details">+23 3000 000 00</p>
-                    <nav class="footer-social-links">
-                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#!"><i class="fab fa-twitter"></i></a>
-                        <a href="#!"><i class="fab fa-behance"></i></a>
-                        <a href="#!"><i class="fab fa-dribbble"></i></a>
-                    </nav>
-                </div>
-                <div class="col-md-3">
-                    <nav class="footer-nav">
-                        <a href="#!" class="nav-link">Company</a>
-                        <a href="#!" class="nav-link">Android App</a>
-                        <a href="#!" class="nav-link">ios App</a>
-                        <a href="#!" class="nav-link">Blog</a>
-                        <a href="#!" class="nav-link">Partners</a>
-                        <a href="#!" class="nav-link">Careers</a>
-                    </nav>
-                </div>
-                <div class="col-md-3">
-                    <nav class="footer-nav">
-                        <a href="#!" class="nav-link">FAQ</a>
-                        <a href="#!" class="nav-link">Reporting</a>
-                        <a href="#!" class="nav-link">Block Storage</a>
-                        <a href="#!" class="nav-link">Tools & Integrations</a>
-                        <a href="#!" class="nav-link">API</a>
-                        <a href="#!" class="nav-link">Pricing</a>
-                    </nav>
-                </div>
-                <div class="col-md-3">
-                    <div class="dropdown footer-country-dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="footerCountryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="flag-icon flag-icon-gb flag-icon-squared"></span> United Kingdom <i class="fas fa-chevron-down ml-2"></i>
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="footerCountryDropdown">
-                            <button class="dropdown-item" href="#">
-                                <span class="flag-icon flag-icon-us flag-icon-squared"></span> United States
-                            </button>
-                            <button class="dropdown-item" href="#">
-                                <span class="flag-icon flag-icon-au flag-icon-squared"></span> Australia
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-content">
-                <nav class="nav footer-bottom-nav">
-                    <a href="#!">Privacy & Policy</a>
-                    <a href="#!">Terms</a>
-                    <a href="#!">Site Map</a>
-                </nav>
-                <p class="mb-0">© Edica. 2020 <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer" class="text-reset">bootstrapdash</a> . All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <script src="{{asset('assets/vendors/popper.js/popper.min.js')}}"></script>
-    <script src="{{asset('assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets/vendors/aos/aos.js')}}"></script>
-    <script src="{{asset('assets/js/main.js')}}"></script>
-    <script>
-        AOS.init({
-            duration: 1000
-        });
-      </script>
-</body>
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-</html>
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="{{asset('css/slick.css')}}"/>
+		<link type="text/css" rel="stylesheet" href="{{asset('css/slick-theme.css')}}"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="{{asset('css/nouislider.min.css')}}"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}"/>
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}"/>
+
+		
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
+	@yield('main')
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+									<img src="./img/logo.png" alt="">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<select class="input-select">
+										<option value="0">All Categories</option>
+										<option value="1">Category 01</option>
+										<option value="1">Category 02</option>
+									</select>
+									<input class="input" placeholder="Search here">
+									<button class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- Wishlist -->
+								<div>
+									<a href="#">
+										<i class="fa fa-heart-o"></i>
+										<span>Your Wishlist</span>
+										<div class="qty">2</div>
+									</a>
+								</div>
+								<!-- /Wishlist -->
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Your Cart</span>
+										<div class="qty">3</div>
+									</a>
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product01.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">product name goes here</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+										<div class="cart-summary">
+											<small>3 Item(s) selected</small>
+											<h5>SUBTOTAL: $2940.00</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">View Cart</a>
+											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<li><a href="#">Hot Deals</a></li>
+						<li><a href="#">Categories</a></li>
+						<li><a href="#">Laptops</a></li>
+						<li><a href="#">Smartphones</a></li>
+						<li><a href="#">Cameras</a></li>
+						<li><a href="#">Accessories</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
