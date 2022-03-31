@@ -52,9 +52,28 @@
                     <tr>
                       <td>Название</td>
                       <td>{{$good->title}}</td>
-                      
-                      
                     </tr>
+                    <tr>
+                      <td>Описание/td>
+                      <td>{{$good->description}}</td>
+                    </tr>
+                    <tr>
+                      <td>Цена</td>
+                      <td>{{$good->price}}</td>
+                    </tr>
+                    <tr>
+                      <td>Скидочная цена</td>
+                      <td>{{$good->offer_price}}</td>
+                    </tr>
+                    <tr>
+                      <td>Категория</td>
+                      <td>{{$good->category->title}}</td>
+                    </tr>
+                    <tr>
+                      <td>Бренд</td>
+                      <td>{{$good->brand->title}}</td>
+                    </tr>
+                    
                   </tbody>
                 </table>
               </div>
