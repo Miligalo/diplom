@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('offer_price')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('brand_id');
+            $table->string('preview_image')->nullable();
             $table->timestamps();
 
             $table->foreign('brand_id')->references('id')->on('brands');

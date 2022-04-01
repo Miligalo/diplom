@@ -52,7 +52,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware' => ['auth
             Route::get('/', 'IndexController')->name('admin.brand.index');
             Route::get('/create', 'CreateController')->name('admin.brand.create');
             Route::post('/', 'StoreController')->name('admin.brand.store');
-            Route::get('/brand}', 'ShowController')->name('admin.brand.show');
+            Route::get('/{brand}', 'ShowController')->name('admin.brand.show');
             Route::get('/{brand}/edit', 'EditController')->name('admin.brand.edit');
             Route::patch('/{brand}', 'UpdateController')->name('admin.brand.update');
             Route::delete('/{brand}', 'DeleteController')->name('admin.brand.delete');

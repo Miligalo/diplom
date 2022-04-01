@@ -54,7 +54,7 @@
                       <td>{{$good->title}}</td>
                     </tr>
                     <tr>
-                      <td>Описание/td>
+                      <td>Описание</td>
                       <td>{{$good->description}}</td>
                     </tr>
                     <tr>

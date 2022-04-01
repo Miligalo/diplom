@@ -30,6 +30,7 @@ class StoreRequest extends FormRequest
             'offer_price' => 'required|int',
             'category_id' => 'required|integer|exists:categories,id',
             'brand_id' => 'required|integer|exists:brands,id',
+            'preview_image'=> 'required|file',
         ];
     }
 }

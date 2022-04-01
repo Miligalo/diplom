@@ -50,6 +50,7 @@
                     <tr>
                       <td>{{$brand->id}}</td>
                       <td>{{$brand->title}}</td>
+                      
                       <td><a href="{{route('admin.brand.show',$brand->id)}}"><i class="far fa-eye"></i></a></td>
                       <td><a href="{{route('admin.brand.edit',$brand->id)}}"><i class="fas fa-pencil-alt"></i></a></td>
                       <td>
