@@ -281,7 +281,7 @@
 										@foreach ($goods as $good)
 										<div class="product">
 											<div class="product-img">
-												<img src="  {{storage_path('app/' . $good->preview_image)}}" alt="" width="80" height="80">
+												<img src="  {{asset('storage/' . $good->preview_image)}}" alt="">
 												<div class="product-label">
 													<span class="sale">-30%</span>
 													<span class="new">NEW</span>

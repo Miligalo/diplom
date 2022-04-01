@@ -14,7 +14,7 @@ class StoreController extends Controller
     {
         
         $data = $request->validated();
-        $data['preview_image'] = Storage::put('/images', $data['preview_image']);
+        $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
         Good::firstOrCreate($data);
         return redirect()->route('admin.good.index');
     }
