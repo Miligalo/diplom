@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		@section('head')
+		
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,20 +14,21 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
 		<!-- Bootstrap -->
-		<link type="text/css" rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}"/>
+		<link type="text/css" rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}"/>
 
 		<!-- Slick -->
-		<link type="text/css" rel="stylesheet" href="{{asset('public/assets/css/slick.css')}}"/>
-		<link type="text/css" rel="stylesheet" href="{{asset('public/assets/css/slick-theme.css')}}"/>
+		<link type="text/css" rel="stylesheet" href="{{asset('assets/css/slick.css')}}"/>
+		<link type="text/css" rel="stylesheet" href="{{asset('assets/css/slick-theme.css')}}"/>
 
 		<!-- nouislider -->
-		<link type="text/css" rel="stylesheet" href="{{asset('public/assets/css/nouislider.min.css')}}"/>
+		<link type="text/css" rel="stylesheet" href="{{asset('assets/css/nouislider.min.css')}}"/>
 
 		<!-- Font Awesome Icon -->
-		<link rel="stylesheet" href="{{asset('public/assets/css/font-awesome.min.css')}}"/>
+		<link rel="stylesheet" href="{{asset('assets/css/font-awesome.min.css')}}"/>
 
 		<!-- Custom stlylesheet -->
-		<link type="text/css" rel="stylesheet" href="{{asset('public/assets/css/style.css')}}"/>
+		<link type="text/css" rel="stylesheet" href="{{asset('assets/css/style.css')}}"/>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
 		
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,14 +36,14 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
-			@endsection
+			
 
     </head>
 	
 	<body>
 		<!-- HEADER -->
 		<header>
-			@section('header')
+			
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
@@ -165,10 +166,10 @@
 			<!-- /MAIN HEADER -->
 			
 
-			@endsection
+			
 		</header>
 		<!-- /HEADER -->
-		@section('navigation')
+		
 		<!-- NAVIGATION -->
 		<nav id="navigation">
 			<!-- container -->
@@ -191,9 +192,9 @@
 			</div>
 			<!-- /container -->
 		</nav>
-		@show
+		@yield('content')
 		<footer id="footer">
-			@section('footer')
+			
 			<div class="section">
 				<!-- container -->
 				<div class="container">
@@ -284,17 +285,17 @@
 				<!-- /container -->
 			</div>
 			<!-- /bottom footer -->
-			@show
+			
 		</footer>
 		<!-- /FOOTER -->
 
-		@section('scripts')
+		
 		<script src="{{asset('assets/js/jquery.min.js')}}"></script>
 		<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 		<script src="{{asset('assets/js/slick.min.js')}}"></script>
 		<script src="{{asset('assets/js/nouislider.min.js')}}"></script>
 		<script src="{{asset('assets/js/jquery.zoom.min.js')}}"></script>
 		<script src="{{asset('assets/js/main.js')}}"></script>	
-		@show
+		
 	</body>
 	</html>
