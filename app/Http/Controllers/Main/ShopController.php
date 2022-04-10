@@ -13,7 +13,7 @@ class ShopController extends Controller
 {
     public function __invoke()
     {
-        $goods = Good::all();
+        $goods = Good::paginate(4);
         $categories = Category::all();
         $brands = Brand::all();
 

@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Filters\QueryFilter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Category;
 use App\Models\Brand;
+use Illuminate\Database\Eloquent\Builder;
 
 class Good extends Model
 {

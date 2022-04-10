@@ -17,10 +17,13 @@ use Whoops\Run;
 Route::group(['namespace'=>'Main'], function(){
     Route::get('/', 'IndexController')->name('main.index');
     Route::get('/shop', 'ShopController')->name('main.shop');
+    Route::get('/search', 'SearchController')->name('main.search');
+    Route::get('/product/{good}', 'ShowController')->name('main.show');
 });
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware' => ['auth', 'admin']], function(){
     Route::group(['namespace'=>'Main'], function(){
         Route::get('/', 'IndexController')->name('admin.main.index');
+        
     });
         Route::group(['namespace'=>'Category', 'prefix' => 'categories'], function(){
             Route::get('/', 'IndexController')->name('admin.category.index');
