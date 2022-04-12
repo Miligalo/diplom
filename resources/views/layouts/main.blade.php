@@ -43,8 +43,7 @@
 	<body>
 		<!-- HEADER -->
 		<header>
-			<form method="get" action="{{route('main.search')}}">
-				@csrf
+			
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
@@ -80,9 +79,11 @@
 						<!-- SEARCH BAR -->
 						<div class="col-md-6">
 							<div class="header-search">
+								<form method="get" action="{{route('main.search')}}">
+									@csrf
 									<input type="text" class="input" name="query" placeholder="Search here">
-									<button class="search-btn" type="submit">Search</button>
-								
+									<button class="search-btn" type="submit" >Search</button>
+								</form>
 							</div>
 						</div>
 						
@@ -190,7 +191,7 @@
 			<!-- /container -->
 		</nav>
 		@yield('content')
-	</form>
+
 		<footer id="footer">
 			
 			<div class="section">

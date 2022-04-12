@@ -10,7 +10,10 @@
 				<!-- row -->
 				<div class="row">
 					<!-- ASIDE -->
+					<form method="get" action="{{route('main.filter')}}">
+						@csrf
 					<div id="aside" class="col-md-3">
+						
 						<!-- aside Widget -->
 						<div class="aside">
 							<h3 class="aside-title">Categories</h3>
@@ -67,7 +70,10 @@
 							</div>
 						</div>
 
+						<button class="filter-btn" type="submit"  >Filter</button>
 					</div>
+				</form>
+
 					<div id="store" class="col-md-9">
 						<!-- store top filter -->
 						<div class="store-filter clearfix">

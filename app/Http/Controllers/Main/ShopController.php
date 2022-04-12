@@ -13,10 +13,15 @@ class ShopController extends Controller
 {
     public function __invoke()
     {
+        $maxPrice = 1000;
+        $minPrice = 1;
+        $categoriesId = [];
+        $brandsId = [];
+
         $goods = Good::paginate(4);
         $categories = Category::all();
         $brands = Brand::all();
 
-        return view('main.shop', compact('goods', 'categories', 'brands'));
+        return view('main.shop', compact('goods', 'categories', 'brands','goods', 'categories', 'brands'));
     }
 }

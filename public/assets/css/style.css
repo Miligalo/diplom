@@ -479,7 +479,7 @@ textarea.input {
   margin-right: -4px;
 }
 
-.header-search form .search-btn {
+.header-search  .search-btn {
   height: 40px;
   width: 100px;
   background: #D10024;
@@ -487,6 +487,16 @@ textarea.input {
   font-weight: 700;
   border: none;
   border-radius: 0px 40px 40px 0px;
+}
+ form .filter-btn  {
+  height: 40px;
+  width: 100px;
+  background: #D10024;
+  color: #FFF;
+  font-weight: 700;
+  border: none;
+  border-radius: 0px 40px 40px 0px;
+  margin-top: 30px;
 }
 
 /*----------------------------*\
