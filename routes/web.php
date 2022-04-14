@@ -20,6 +20,14 @@ Route::group(['namespace'=>'Main'], function(){
     Route::get('/search', 'SearchController')->name('main.search');
     Route::get('/filter', 'FilterController')->name('main.filter');
     Route::get('/product/{good}', 'ShowController')->name('main.show');
+    Route::get('/favorites', 'FavoriteController')->name('main.favorite');
+    
+    
+    Route::group(['namespace'=>'Favorite', 'prefix' => '{good}/favorites'], function(){
+        Route::get('/', 'FavoriteController')->name('favorite.store');
+        Route::get('/cookie', 'FavoriteCookieController')->name('favorite.cookie');
+        Route::get('/cookieDelete', 'DeleteCookieController')->name('favorite.cookie.delete');
+    });
 });
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware' => ['auth', 'admin']], function(){
     Route::group(['namespace'=>'Main'], function(){

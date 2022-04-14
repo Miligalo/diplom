@@ -32,7 +32,7 @@ class FilterController extends Controller
         if ($categoriesId){
             $query = $query->whereIn('category_id', $categoriesId);
         }
-        $goods = $query->paginate(10);
+        $goods = $query->paginate(6);
         
         return view('main.shop', compact('goods', 'categories', 'brands'));
     }

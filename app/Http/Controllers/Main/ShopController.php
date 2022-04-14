@@ -18,7 +18,7 @@ class ShopController extends Controller
         $categoriesId = [];
         $brandsId = [];
 
-        $goods = Good::paginate(4);
+        $goods = Good::paginate(6);
         $categories = Category::all();
         $brands = Brand::all();
 

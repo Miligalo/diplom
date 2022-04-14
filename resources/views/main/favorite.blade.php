@@ -8,72 +8,6 @@
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
-				<div class="row">
-					<!-- ASIDE -->
-					<form method="get" action="{{route('main.filter')}}">
-						@csrf
-					<div id="aside" class="col-md-3">
-						
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Categories</h3>
-							<div class="checkbox-filter">
-								@foreach ($categories as $category)
-								<div class="input-checkbox">
-									<input  type="checkbox" id="category_{{$category->id}}" value="{{$category->id}}" name="category[]">
-									<label for="category_{{$category->id}}">
-										<span></span>
-										{{$category->title}}
-										<small>(120)</small>
-									</label>
-								</div>								
-								@endforeach
-
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Price</h3>
-							<div class="price-filter">
-								<div id="price-slider"></div>
-								<div class="input-number price-min">
-									<input id="price-min" type="number" name="price_min">
-									<span class="qty-up">+</span>
-									<span class="qty-down">-</span>
-								</div>
-								<span>-</span>
-								<div class="input-number price-max">
-									<input id="price-max" type="number" name="price_max">
-									<span class="qty-up">+</span>
-									<span class="qty-down">-</span>
-								</div>
-							</div>
-						</div>
-						<!-- /aside Widget -->
-
-						<!-- aside Widget -->
-						<div class="aside">
-							<h3 class="aside-title">Brand</h3>
-							<div class="checkbox-filter">
-								@foreach($brands as $brand)
-								<div class="input-checkbox">
-									<input type="checkbox" name="brand[]" value="{{$brand->id}}" id="brand_{{$brand->id}}">
-									<label for="brand_{{$brand->id}}">
-										<span></span>
-										{{$brand->title}}
-										<small>(578)</small>
-									</label>
-								</div>
-								@endforeach
-							</div>
-						</div>
-
-						<button class="filter-btn" type="submit"  >Filter</button>
-					</div>
-				</form>
-
 					<div id="store" class="col-md-9">
 						<!-- store top filter -->
 						<div class="store-filter clearfix">
@@ -86,6 +20,7 @@
 						<!-- store products -->
 						<div class="row">
 							<!-- product -->
+							@if($goods)
 							@foreach($goods as $good)
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
@@ -101,8 +36,8 @@
 										<h4 class="product-price">{{$good->price}} <del class="product-old-price">{{$good->offer_price}}</del></h4>
 										
 										<div class="product-btns">
-												<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else "{{route('favorite.cookie', $good->id)}}" @endif method="get">
-												<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+											<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else "{{route('favorite.cookie.delete', $good->id)}}" @endif method="get">
+												<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Убрать </span></button>
 												@csrf
 											<button class="quick-view"><a href="{{route('main.show',$good->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
 										</form>
@@ -114,6 +49,7 @@
 								</div>
 							</div>
 							@endforeach
+							@endif
 						
 							<!-- /product -->
 						</div>
@@ -124,7 +60,7 @@
 
 							<ul class="store-pagination">
 								
-									{{$goods->links()}}
+									
 									
 								
 							</ul>
