@@ -58,10 +58,7 @@
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix" >
 
-							<ul class="store-pagination">
-								
-									
-									
+							<ul class="store-pagination">						
 								
 							</ul>
 						</div>

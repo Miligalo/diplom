@@ -8,9 +8,14 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Good;
+use App\Service\FavoriteService;
 
 class ShopController extends Controller
 {
+    public function __construct(private FavoriteService $fav)
+    {
+        
+    }
     public function __invoke()
     {
         $maxPrice = 1000;
@@ -22,6 +27,8 @@ class ShopController extends Controller
         $categories = Category::all();
         $brands = Brand::all();
 
-        return view('main.shop', compact('goods', 'categories', 'brands','goods', 'categories', 'brands'));
+        $favoriteIds = $this->fav->get();
+
+        return view('main.shop', compact('goods', 'categories', 'brands','goods', 'categories', 'brands', 'favoriteIds'));
     }
 }

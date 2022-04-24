@@ -85,7 +85,7 @@
                   </div>
                 </div>
               </div>
-          </div>
+      </div>
               <input type="submit" class="btn btn-primary" value="Добавить">   
             </form>
           </div>

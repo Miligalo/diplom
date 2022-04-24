@@ -977,7 +977,10 @@ textarea.input {
   height: 1px;
   background-color: #E4E7ED;
 }
-
+.normal-btns {
+  display: flex;
+  justify-content: center;
+}
 .product .product-body .product-btns>button {
   position: relative;
   width: 40px;
@@ -1439,7 +1442,7 @@ textarea.input {
   border: 1px solid #E4E7ED;
 }
 
-#product-imgs .product-preview.slick-current {
+#product-imgs .slick-current {
   border-color: #D10024;
 }
 

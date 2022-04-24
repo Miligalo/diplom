@@ -86,7 +86,7 @@
 										@foreach ($goods as $good)
 										<div class="product">
 											<div class="product-img">
-												<img src="  {{asset('storage/' . $good->preview_image)}}" width="200" height="200"  alt="">
+												<img src="{{asset('storage/' . $good->preview_image)}}" width="200" height="200"  alt="">
 												<div class="product-label">
 													<span class="new">NEW</span>
 												</div>
@@ -96,16 +96,13 @@
 												<h3 class="product-name"><a href="#">{{$good->title}}</a></h3>
 												<h4 class="product-price">{{$good->price}} <del class="product-old-price">{{$good->offer_price}}</del></h4>
 												<div class="product-rating">
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
-													<i class="fa fa-star"></i>
 												</div>
-												<div class="product-btns">
-													<button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-													<button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+												<div class="product-btns normal-btns">
+													<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else "{{route('favorite.cookie', $good->id)}}" @endif method="get">
+													<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">@if(in_array($good->id,$favoriteIds))Удалить из избранного @else Добавить в избранное @endif</span></button>
+													@csrf
+												</form>
+												<button class="quick-view"><a href="{{route('main.show',$good->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 												</div>
 											</div>
 											<div class="add-to-cart">
