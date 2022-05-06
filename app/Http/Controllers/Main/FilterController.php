@@ -8,9 +8,14 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Good;
+use App\Service\CookieService;
 
 class FilterController extends Controller
 {
+    public function __construct(private CookieService $favorites)
+    {
+        
+    }
     public function __invoke(Request $request)
     {
         
@@ -33,7 +38,8 @@ class FilterController extends Controller
             $query = $query->whereIn('category_id', $categoriesId);
         }
         $goods = $query->paginate(6);
+        $favoriteIds = $this->favorites->getFavorites(auth()->check(), auth()->id());
         
-        return view('main.shop', compact('goods', 'categories', 'brands'));
+        return view('main.shop', compact('goods', 'categories', 'brands', 'favoriteIds'));
     }
 }

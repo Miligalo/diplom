@@ -981,6 +981,11 @@ textarea.input {
   display: flex;
   justify-content: center;
 }
+
+.fix {
+  display: flex;
+  justify-content: center;
+}
 .product .product-body .product-btns>button {
   position: relative;
   width: 40px;
@@ -1967,6 +1972,18 @@ textarea.input {
   width: calc(100% - 160px);
   margin-right: -4px;
   border-radius: 40px 0px 0px 40px;
+}
+
+.buttoncheckout {
+  
+    width: 160px;
+    height: 40px;
+    font-weight: 700;
+    background: #D10024;
+    color: #FFF;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+  
 }
 
 .newsletter form .newsletter-btn {

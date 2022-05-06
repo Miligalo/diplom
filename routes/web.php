@@ -21,12 +21,21 @@ Route::group(['namespace'=>'Main'], function(){
     Route::get('/filter', 'FilterController')->name('main.filter');
     Route::get('/product/{good}', 'ShowController')->name('main.show');
     Route::get('/favorites', 'FavoriteController')->name('main.favorite');
+    Route::get('/carts', 'CartController')->name('main.cart');
+    Route::get('/checkout', 'CheckoutController')->name('main.checkout');
+    Route::post('/store', 'StoreCheckoutController')->name('main.checkout.store');
     
     
     Route::group(['namespace'=>'Favorite', 'prefix' => '{good}/favorites'], function(){
         Route::get('/', 'FavoriteController')->name('favorite.store');
         Route::get('/cookie', 'FavoriteCookieController')->name('favorite.cookie');
         Route::get('/cookieDelete', 'DeleteCookieController')->name('favorite.cookie.delete');
+    });
+    Route::group(['namespace'=>'Cart', 'prefix' => '{good}/cart'], function(){
+        Route::get('/', 'CartController')->name('cart.store');
+        Route::get('/cookieCart', 'CartCookieController')->name('cart.cookie');
+        Route::get('/cookieCartDelete', 'DeleteCartCookieController')->name('cart.cookie.delete');
+        
     });
 });
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware' => ['auth', 'admin']], function(){

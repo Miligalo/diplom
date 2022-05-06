@@ -64,4 +64,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Good::class,'favourites', 'user_id', 'good_id');
     }
 
+    public function cartGood()
+    {
+        return $this->belongsToMany(Good::class,'carts', 'user_id', 'good_id');
+    }
+
 }

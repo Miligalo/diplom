@@ -14,8 +14,8 @@
 								<img src="{{asset('assets/img/shop01.png')}}" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Laptop<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>Лучшие<br>Ноутбуки</h3>
+								<a href="{{route('main.shop')}}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -28,8 +28,8 @@
 								<img src="{{asset('assets/img/shop03.png')}}" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Accessories<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>Лучшие<br>Наушники</h3>
+								<a href="{{route('main.shop')}}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -42,8 +42,8 @@
 								<img src="{{asset('assets/img/shop02.png')}}" alt="">
 							</div>
 							<div class="shop-body">
-								<h3>Cameras<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<h3>Новейшие<br>Камеры</h3>
+								<a href="{{route('main.shop')}}" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">New Products</h3>
+							<h3 class="title">Новый товар</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
@@ -98,7 +98,7 @@
 												<div class="product-rating">
 												</div>
 												<div class="product-btns normal-btns">
-													<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else "{{route('favorite.cookie', $good->id)}}" @endif method="get">
+													<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else @if(in_array($good->id,$favoriteIds)) "{{route('favorite.cookie.delete', $good->id)}}" @else "{{route('favorite.cookie', $good->id)}}" @endif @endif method="get">
 													<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">@if(in_array($good->id,$favoriteIds))Удалить из избранного @else Добавить в избранное @endif</span></button>
 													@csrf
 												</form>
@@ -106,12 +106,12 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><a href=@if(auth()->check())"{{route('cart.store', $good->id)}}" @else "{{route('cart.cookie', $good->id)}}" @endif><i class="fa fa-shopping-cart"></i> add to cart</a></button>
 											</div>
 										</div>
 										@endforeach
 										<!-- /product -->
-
+										
 									</div>
 									<div id="slick-nav-1" class="products-slick-nav"></div>
 								</div>
@@ -127,51 +127,7 @@
 		</div>
 		<!-- /SECTION -->
 
-		<!-- HOT DEAL SECTION -->
-		<div id="hot-deal" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="hot-deal">
-							<ul class="hot-deal-countdown">
-								<li>
-									<div>
-										<h3>02</h3>
-										<span>Days</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>10</h3>
-										<span>Hours</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>34</h3>
-										<span>Mins</span>
-									</div>
-								</li>
-								<li>
-									<div>
-										<h3>60</h3>
-										<span>Secs</span>
-									</div>
-								</li>
-							</ul>
-							<h2 class="text-uppercase">hot deal this week</h2>
-							<p>New Collection Up to 50% OFF</p>
-							<a class="primary-btn cta-btn" href="#">Shop now</a>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /HOT DEAL SECTION -->
+
 
 		<!-- SECTION -->
 		<div class="section">
@@ -183,7 +139,7 @@
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
-							<h3 class="title">Top selling</h3>
+							<h3 class="title">Лучшие товары</h3>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>

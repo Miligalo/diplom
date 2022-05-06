@@ -47,13 +47,9 @@
 			<div id="top-header">
 				<div class="container">
 					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i> 066-200-95-25</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> milioglo2000@gmail.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i>Филатова</a></li>
 					</ul>
 				</div>
 			</div>
@@ -82,7 +78,7 @@
 								<form method="get" action="{{route('main.search')}}">
 									@csrf
 									<input type="text" class="input" name="query" placeholder="Search here">
-									<button class="search-btn" type="submit" >Search</button>
+									<button class="search-btn" type="submit" >Поиск</button>
 								</form>
 							</div>
 						</div>
@@ -90,6 +86,7 @@
 						<!-- /SEARCH BAR -->
 
 						<!-- ACCOUNT -->
+						<div>
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
 								<!-- Wishlist -->
@@ -100,49 +97,21 @@
 										
 									</a>
 								</div>
+							</div>
 								<!-- /Wishlist -->
 
 								<!-- Cart -->
-								<div class="dropdown">
-									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-										<i class="fa fa-shopping-cart"></i>
-										<span>Your Cart</span>
-										<div class="qty">3</div>
-									</a>
-									<div class="cart-dropdown">
-										<div class="cart-list">
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product01.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
-
-											<div class="product-widget">
-												<div class="product-img">
-													<img src="./img/product02.png" alt="">
-												</div>
-												<div class="product-body">
-													<h3 class="product-name"><a href="#">product name goes here</a></h3>
-													<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-												</div>
-												<button class="delete"><i class="fa fa-close"></i></button>
-											</div>
+								<div class="col-md-3 clearfix">
+									<div class="header-ctn">
+										<!-- Wishlist -->
+										<div>
+											<a href="{{route('main.cart')}}">
+												<i class="fa fa-shopping-cart"></i>
+												<span>Your Wishlist</span>
+												
+											</a>
 										</div>
-										<div class="cart-summary">
-											<small>3 Item(s) selected</small>
-											<h5>SUBTOTAL: $2940.00</h5>
-										</div>
-										<div class="cart-btns">
-											<a href="#">View Cart</a>
-											<a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
-										</div>
-									</div>
-								</div>
+								
 								<!-- /Cart -->
 
 								<!-- Menu Toogle -->
@@ -200,9 +169,9 @@
 								<h3 class="footer-title">About Us</h3>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+									<li><a href="#"><i class="fa fa-map-marker"></i>Филатова</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>066-200-95-25</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>milioglo2000@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>

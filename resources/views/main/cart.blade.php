@@ -16,9 +16,12 @@
 							
 						</div>
 						<!-- /store top filter -->
-
+					
+						<button class="buttoncheckout"><i class="fa fa-envelope"></i>Оформить заказ</button>
+					
 						<!-- store products -->
 						<div class="row">
+							
 							<!-- product -->
 							@if($goods)
 							@foreach($goods as $good)
@@ -36,11 +39,11 @@
 										<h4 class="product-price">{{$good->price}} <del class="product-old-price">{{$good->offer_price}}</del></h4>
 										
 										<div class="product-btns">
-											<form   class="product-btns" action= @if(auth()->check())"{{route('favorite.store', $good->id)}}" @else "{{route('favorite.cookie.delete', $good->id)}}" @endif method="get">
-												<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Убрать </span></button>
+											<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else @if(in_array($good->id,$favoriteIds)) "{{route('favorite.cookie.delete', $good->id)}}" @else "{{route('favorite.cookie', $good->id)}}" @endif @endif method="get">
+												<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">@if(in_array($good->id,$favoriteIds))Удалить из избранного @else Добавить в избранное @endif</span></button>
 												@csrf
-											<button class="quick-view"><a href="{{route('main.show',$good->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
-										</form>
+											</form>
+											<button class="quick-view"><a href="{{route('main.show',$good->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 											</div>
 									</div>
 									<div class="add-to-cart">
@@ -50,7 +53,6 @@
 							</div>
 							@endforeach
 							@endif
-
 						
 							<!-- /product -->
 						</div>

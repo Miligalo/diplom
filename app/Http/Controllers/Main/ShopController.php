@@ -8,11 +8,11 @@ use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Good;
-use App\Service\FavoriteService;
+use App\Service\CookieService;
 
 class ShopController extends Controller
 {
-    public function __construct(private FavoriteService $fav)
+    public function __construct(private CookieService $favorites)
     {
         
     }
@@ -27,7 +27,10 @@ class ShopController extends Controller
         $categories = Category::all();
         $brands = Brand::all();
 
-        $favoriteIds = $this->fav->get();
+        $favoriteIds = $this->favorites->getFavorites(auth()->check(), auth()->id());
+
+        
+
 
         return view('main.shop', compact('goods', 'categories', 'brands','goods', 'categories', 'brands', 'favoriteIds'));
     }
