@@ -49,6 +49,14 @@
           </p>
         </a>
       </li>
+      <li class="nav-item">
+        <a href="{{route('admin.checkout.index')}}" class="nav-link">
+          <i class="nav-icon fas fa-th-list"></i>
+          <p>
+            Заказы
+          </p>
+        </a>
+      </li>
       
     </ul>
 

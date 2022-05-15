@@ -79,6 +79,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin','middleware' => ['auth
             Route::patch('/{brand}', 'UpdateController')->name('admin.brand.update');
             Route::delete('/{brand}', 'DeleteController')->name('admin.brand.delete');
         });
+        Route::group(['namespace'=>'Checkout', 'prefix' => 'checkouts'], function(){
+            Route::get('/', 'IndexController')->name('admin.checkout.index');
+            Route::get('/{checkout}', 'ShowController')->name('admin.checkout.show');
+            Route::delete('/{checkout}', 'DeleteController')->name('admin.checkout.delete');
+        });
 });
 
 Auth::routes(['verify' => true]);

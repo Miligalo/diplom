@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Main;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Service\CookieService;
 use App\Models\Favourite;
 use App\Models\Post;
@@ -13,7 +14,7 @@ use App\Models\Good;
 class IndexController extends Controller
 {
     
-    public function __construct(private CookieService $favorites)
+    public function __construct(private CookieService $cookieService)
     {
         
     }
@@ -24,14 +25,14 @@ class IndexController extends Controller
         
         $data = [];
 
-        $favoriteIds = $this->favorites->getFavorites(auth()->check(), auth()->id());
+        $favoriteIds = $this->cookieService->getFavorites(auth()->check(), auth()->id());
 
-        $cartGoods = auth()->user()?->cartGood;
+        $cartIds = $this->cookieService->getCarts(auth()->check(), auth()->id());
 
-        $countCartGoods = auth()->user()?->cartGood->count();
-        $sumPriceCartGoods = auth()->user()?->cartGood->sum('price');
+        $items = Good::query()->where('category_id', '=', '1')->limit(4)->get();
 
+    
         
-        return view('main.index', compact('goods', 'favoriteIds', 'cartGoods','countCartGoods', 'sumPriceCartGoods'));
+        return view('main.index', compact('goods', 'favoriteIds','cartIds', 'items'));
     }
 }

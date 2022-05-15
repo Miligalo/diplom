@@ -32,25 +32,19 @@
               <div class="form-group">
                 <label for>Название</label>
                 <input type="text" class="form-control" name="title" placeholder="Название категории" value="{{$good->title}}">
-                @error('title')
-                    <div class="text-damger">Это поле нужно заполнить</div>
-                @enderror
+                
               </div>
               <div class="form-group">
                 <label for class="w-25">Описание товара</label>
                   <textarea id="summernote" name="description">
                    {{old('description')}}
                   </textarea>
-                  @error('description')
-                  <div class="text-damger">Описание товара нужно заполнить</div>
-              @enderror
+                  
               </div>
               <div class="form-group">
                 <label for>Цена</label>
                 <input type="number" min="1" class="form-control" name="price" placeholder="Цена товара">
-                 @error('price')
-                    <div class="text-damger">Это поле нужно заполнить</div>
-                @enderror
+                
               </div>
               <div class="form-group">
                 <label for>Скидочная цена</label>
@@ -68,6 +62,28 @@
                   @endforeach
                 </select>
               </div>
+              <div class="form-group">
+                <label>Выберите бренд</label>
+                <select name="brand_id" class="form-control">
+                  @foreach ($brands as $brand)
+                  <option value="{{$brand->id}}"
+                    {{$brand->id == old('brand_id') ? 'selected' : ''}}>{{$brand->title}}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">Добавить превью</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="preview_image">
+                    <label class="custom-file-label">Выберите изображение</label>
+                  </div>
+                  <div class="input-group-append">
+                    <span class="input-group-text">Загрузка</span>
+                  </div>
+                </div>
+              </div>
+      </div>
               <input type="submit" class="btn btn-primary" value="Обновить">   
             </form>
           </div>

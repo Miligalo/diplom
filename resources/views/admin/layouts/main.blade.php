@@ -58,7 +58,7 @@
   
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Blog</strong>
+    <strong></strong>
   </footer>
 
   <!-- Control Sidebar -->

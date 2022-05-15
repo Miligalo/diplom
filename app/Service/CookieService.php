@@ -31,7 +31,7 @@ class CookieService
     }
 
 
-    public function getCards(bool $authCheck, int $authId = null):array
+    public function getCarts(bool $authCheck, int $authId = null):array
     {
         $resCart = [];
 

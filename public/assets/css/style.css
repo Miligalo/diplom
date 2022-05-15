@@ -1067,6 +1067,19 @@ textarea.input {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
+.favorite-store{
+  position: relative;
+  border: 2px solid transparent;
+  height: 40px;
+  padding: 0 30px;
+  background-color: #ef233c;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 70;
+  border-radius: 40px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
 
 .product .add-to-cart .add-to-cart-btn>i {
   position: absolute;

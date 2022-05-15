@@ -93,7 +93,7 @@
 								<div>
 									<a href="{{route('main.favorite')}}">
 										<i class="fa fa-heart-o"></i>
-										<span>Your Wishlist</span>
+										<span>Избранное</span>
 										
 									</a>
 								</div>
@@ -107,7 +107,7 @@
 										<div>
 											<a href="{{route('main.cart')}}">
 												<i class="fa fa-shopping-cart"></i>
-												<span>Your Wishlist</span>
+												<span>Корзина</span>
 												
 											</a>
 										</div>
@@ -147,6 +147,7 @@
 					<ul class="main-nav nav navbar-nav">
 						<li><a href="{{route('main.index')}}">Главная</a></li>
 						<li><a href="{{route('main.shop')}}">Магазин</a></li>
+						<li><a href="#">Сборка компьютера</a></li>
 
 					</ul>
 					<!-- /NAV -->
@@ -166,8 +167,8 @@
 					<div class="row">
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
-								<h3 class="footer-title">About Us</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+								<h3 class="footer-title">О нас</h3>
+								<p>У нас вы можете преобрести все новейшие устройства.</p>
 								<ul class="footer-links">
 									<li><a href="#"><i class="fa fa-map-marker"></i>Филатова</a></li>
 									<li><a href="#"><i class="fa fa-phone"></i>066-200-95-25</a></li>
@@ -176,43 +177,18 @@
 							</div>
 						</div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Categories</h3>
-								<ul class="footer-links">
-									<li><a href="#">Hot deals</a></li>
-									<li><a href="#">Laptops</a></li>
-									<li><a href="#">Smartphones</a></li>
-									<li><a href="#">Cameras</a></li>
-									<li><a href="#">Accessories</a></li>
-								</ul>
-							</div>
-						</div>
+						
 
 						<div class="clearfix visible-xs"></div>
 
-						<div class="col-md-3 col-xs-6">
-							<div class="footer">
-								<h3 class="footer-title">Information</h3>
-								<ul class="footer-links">
-									<li><a href="#">About Us</a></li>
-									<li><a href="#">Contact Us</a></li>
-									<li><a href="#">Privacy Policy</a></li>
-									<li><a href="#">Orders and Returns</a></li>
-									<li><a href="#">Terms & Conditions</a></li>
-								</ul>
-							</div>
-						</div>
+						
 
 						<div class="col-md-3 col-xs-6">
 							<div class="footer">
 								<h3 class="footer-title">Service</h3>
 								<ul class="footer-links">
-									<li><a href="#">My Account</a></li>
-									<li><a href="#">View Cart</a></li>
-									<li><a href="#">Wishlist</a></li>
-									<li><a href="#">Track My Order</a></li>
-									<li><a href="#">Help</a></li>
+									<li><a href="{{route('main.index')}}">Главная</a></li>
+									<li><a href="{{route('main.shop')}}">Магазин</a></li>
 								</ul>
 							</div>
 						</div>

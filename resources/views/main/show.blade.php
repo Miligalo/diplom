@@ -43,11 +43,11 @@
 							<div class="add-to-cart">
 								
 								
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Добавить в корзину</button>
 							</div>
 							<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else "{{route('favorite.cookie', $good->id)}}" @endif method="get">
 							<ul class="product-btns">
-								<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
+								<button  class="favorite-store"><i class="fa fa-heart-o"></i><span class="tooltipp">  Добавить в избранное</span></button>
 							</ul>
 							</form>
 							<ul class="product-links">
@@ -238,39 +238,7 @@
 		<!-- /Section -->
 
 		<!-- NEWSLETTER -->
-		<div id="newsletter" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="newsletter">
-							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
-							<form>
-								<input class="input" type="email" placeholder="Enter Your Email">
-								<button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-							</form>
-							<ul class="newsletter-follow">
-								<li>
-									<a href="#"><i class="fa fa-facebook"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-pinterest"></i></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
+
 		<!-- /NEWSLETTER -->
 
 		<!-- FOOTER -->

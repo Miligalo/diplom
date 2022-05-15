@@ -39,6 +39,6 @@ class StoreCheckoutController extends Controller
                $goods = null;
            }
         }
-        return view('main.index', compact('goods'));
+        return view('main.finish', compact('goods'));
     }
 }

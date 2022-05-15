@@ -17,7 +17,7 @@
 						</div>
 						<!-- /store top filter -->
 					
-						<button class="buttoncheckout"><i class="fa fa-envelope"></i>Оформить заказ</button>
+						<button class="buttoncheckout"><a href="{{route('main.checkout')}}"><i class="fa fa-envelope"></i>Оформить заказ</a></button>
 					
 						<!-- store products -->
 						<div class="row">
@@ -38,7 +38,7 @@
 										<h3 class="product-name"><a href="#">{{$good->title}}</a></h3>
 										<h4 class="product-price">{{$good->price}} <del class="product-old-price">{{$good->offer_price}}</del></h4>
 										
-										<div class="product-btns">
+										<div class="product-btns normal-btns">
 											<form   class="product-btns" action=@if(auth()->check())"{{route('favorite.store', $good->id)}}" @else @if(in_array($good->id,$favoriteIds)) "{{route('favorite.cookie.delete', $good->id)}}" @else "{{route('favorite.cookie', $good->id)}}" @endif @endif method="get">
 												<button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">@if(in_array($good->id,$favoriteIds))Удалить из избранного @else Добавить в избранное @endif</span></button>
 												@csrf
@@ -47,7 +47,9 @@
 											</div>
 									</div>
 									<div class="add-to-cart">
-										<button class="add-to-cart-btn"><a href=@if(auth()->check())"{{route('cart.store', $good->id)}}" @else "{{route('cart.cookie', $good->id)}}" @endif><i class="fa fa-shopping-cart"></i> add to cart</a></button>
+										<form   class="product-btns" action=@if(auth()->check())"{{route('cart.store', $good->id)}}" @else @if(in_array($good->id,$cartIds)) "{{route('cart.cookie.delete', $good->id)}}" @else "{{route('cart.cookie', $good->id)}}" @endif @endif method="get">
+										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>@if(in_array($good->id,$cartIds))Удалить из корзины @else Добавить в корзину @endif</a></button>
+										</form>
 									</div>
 								</div>
 							</div>

@@ -15,7 +15,7 @@ class DeleteCartCookieController extends Controller
             $cart= json_decode($_COOKIE['cartCookie'],true);
 
             $index = array_search($id, $cart);
-            unset($favorite[$index]);
+            unset($cart[$index]);
             
             setcookie('cartCookie',json_encode($cart), time() + 60 * 60 * 24, '/');
         

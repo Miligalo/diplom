@@ -10,7 +10,7 @@ use App\Service\CookieService;
 
 class FavoriteController extends Controller
 {
-    public function __construct(private CookieService $favorites)
+    public function __construct(private CookieService $cookieService)
     {
         
     }
@@ -28,7 +28,7 @@ class FavoriteController extends Controller
            }
         }
 
-        $favoriteIds = $this->favorites->getFavorites(auth()->check(), auth()->id());
+        $favoriteIds = $this->cookieService->getFavorites(auth()->check(), auth()->id());
 
         return view('main.favorite', compact('goods', 'favoriteIds'));
     }

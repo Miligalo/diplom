@@ -1,1 +1,35 @@
-  
+<?php
+
+namespace App\Http\Controllers\Main;
+
+use App\Http\Controllers\Controller;
+use App\Models\Post;
+use Illuminate\Http\Request;
+use App\Models\Good;
+use App\Service\CookieService;
+
+class CartController extends Controller
+{
+    public function __construct(private CookieService $cookieService)
+    {
+        
+    }
+    public function __invoke()
+    {
+        if(auth()->check()){
+            $goods = auth()->user()->cartGood;
+        }
+        else{
+           if(!empty($_COOKIE['cartCookie'])){
+            $goods = Good::query()->whereIn('id', json_decode($_COOKIE['cartCookie'],true))->get();
+           } 
+           else{
+               $goods = null;
+           }
+        }
+        $favoriteIds = $this->cookieService->getFavorites(auth()->check(), auth()->id());
+        $cartIds = $this->cookieService->getCarts(auth()->check(), auth()->id());
+
+        return view('main.cart', compact('goods', 'cartIds', 'favoriteIds'));
+    }
+}
